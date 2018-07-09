@@ -33,11 +33,16 @@ class Orders extends CI_Model
         return $result;
     }
     
-    function updateOrder($table,$tableNumber)
+    function updateOrder($table,$tableNumber,$data)
     {
-        $row = Lazer::table($table)->where('tablenumber', '=', $tableNumber)->find(1); //Edit row with ID 1
-        $row->nickname = 'edited_user';
-        $row->save();
+       
+        $records = Lazer::table($table)->where('tablenumber', '=', $tableNumber)->find(); //Edit row with ID 1
+        foreach($data as $key=>$val)
+        {
+            $records->$key=$val;
+        }
+        $records->save();
+       
     }
     
         

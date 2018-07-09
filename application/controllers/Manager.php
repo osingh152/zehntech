@@ -28,7 +28,15 @@ class Manager extends CI_Controller {
         }
         public function UpdateOrders($tableNumber)
         {
-            
+            $update=array(
+                'status'=>'Closed',
+                'amount'=>(int)$this->input->post('amount')
+            );
+//            echo '<pre />';
+//            var_dump($update); die;
+            $this->orders->updateOrder('orders',(int)$tableNumber,$update);
+            $data['orders']=$this->orders->TableWiseOrder('orders',(int)$tableNumber); 
+            $this->load->view('orderAjx',$data);
         }
         
 }

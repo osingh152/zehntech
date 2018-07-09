@@ -14,10 +14,15 @@
                      <th>Food</th>
                      <th>Quantity</th>
                      <th>Status</th>
+                     <th>Amount</th>
                      </thead>
                      <tbody>
                          <?php 
                             foreach($orders as $odr) {
+                                if($odr->status=='closed')
+                                {
+                                  $cls='style="display:none"';
+                                }
                          ?>
                          <tr>
                              <td><?php echo $odr->tablenumber ?></td>
@@ -25,16 +30,17 @@
                              <td><?php echo $odr->foodtype ?></td>
                              <td><?php echo $odr->quantity ?></td>
                              <td><?php echo $odr->status ?></td>
+                             <td><?php echo $odr->amount ?></td>
                          </tr>
                             <?php } ?>
                          
                      </tbody>
                  </table>
                     </div>
-         <div class="panel-footer">
+         <div class="panel-footer" <?php echo @$cls ?>>
              <div class="row">
                  <div class="col-md-6">
-                  <input type="number" class="form-control" placeholder="Please enter amount" />
+                     <input type="number" name="amount" id="amount" class="form-control" placeholder="Please enter amount" />
              </div>
              <div class="col-md-6">
                  <button class="btn btn-info" onclick="UpdateOrder()">Print</button>

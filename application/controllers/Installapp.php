@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Installapp extends CI_Controller {
 
 	function __construct()
         {
@@ -39,7 +39,7 @@ class Welcome extends CI_Controller {
             $this->orders->CreateTable('orders',$orders);
             
             $this->InsertRecords();
-            
+           
         }
         public function InsertRecords()
         {
@@ -89,37 +89,8 @@ class Welcome extends CI_Controller {
              $this->orders->InsertRecords('Tables',$table3);
              $this->orders->InsertRecords('Tables',$table4);
              $this->orders->InsertRecords('Tables',$table5);
-             
+            $data['_view']='welcome';
+            $this->load->view('layout/main',$data);
         }
         
-        public function index()
-	{
-            $data['_view']='install';
-            $this->load->view('layout/main',$data);
-	}
-        public function Start()
-	{
-            $data['ColdDrinkType']=$this->orders->GetRecords('ColdDrinkType');
-            $data['FoodType']=$this->orders->GetRecords('FoodType');
-            $data['Tables']=$this->orders->GetRecords('Tables');
-            
-            if($this->input->post())
-            {
-                $order=array(
-                'tablenumber'=>(int)$this->input->post('TableNumber'),
-                'colddrinktype'=>$this->input->post('ColdDrinkType'),
-                'foodtype'=>$this->input->post('FoodType'), 
-                'quantity'=>(int)$this->input->post('Quantity'),
-                'order'=>$this->input->post('FoodType'),
-                'status'=>'Open'   
-                    
-                
-            );
-            $this->orders->InsertRecords('orders',$order);     
-            }
-            $data['title']='Take order';
-            $data['orders']=$this->orders->GetOpenOrderRecords('orders');
-            $data['_view']='TakeOrders';
-            $this->load->view('layout/main',$data);
-	}
 }

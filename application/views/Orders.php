@@ -91,16 +91,26 @@ function GetOrders(table)
 function UpdateOrder()
 {
     var table=$('#TableNumber').val();
+    var amount=$('#amount').val();
+    if(amount==='')
+    {
+       alert('Please select order amount'); 
+    }
+    else {
     $.ajax({
+             type: 'POST',
             url: '<?php echo base_url() ?>index.php/manager/UpdateOrders/'+table,
+            data: { amount: amount},
             beforeSend: function( xhr ) {
                 xhr.overrideMimeType( "text/plain; charset=utf-8" );
                 }
             }).done(function( data )
                     {
-                     console.log(data);
+                    $('#orders').html(data);
+                    window.print();
                     
                     });
     
+}
 }
 </script>
