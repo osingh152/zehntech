@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Take orders</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-
-  </head>
-  <body>
-     <div class="container">    
+ <div class="container">    
          <div class="row">
              <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <form action="" method="post">
@@ -71,7 +61,7 @@
                          </div>
                         <div class="form-group">
                             <label>Quantity</label>
-                            <input name="Quantity" class="form-control" placeholder="Please enter quantity" required="" />
+                            <input name="Quantity" type="number" class="form-control" placeholder="Please enter quantity" required="" />
                             
                         </div>
                         <input type="submit" name="order" value="Order" class="btn btn-primary" />
@@ -83,12 +73,14 @@
         
          <div class="row">
              <div class="col-md-12">
+                 <?php if(count($orders)>=1) { ?>
                  <table class="table table-bordered"> 
                      <thead>
                      <th>Table</th>
                      <th>Cold Drink</th>
                      <th>Food</th>
                      <th>Quantity</th>
+                     <th>Status</th>
                      </thead>
                      <tbody>
                          <?php 
@@ -99,16 +91,15 @@
                              <td><?php echo $odr->colddrinktype ?></td>
                              <td><?php echo $odr->foodtype ?></td>
                              <td><?php echo $odr->quantity ?></td>
+                             <td><?php echo $odr->status ?></td>
                          </tr>
                             <?php } ?>
                      </tbody>
                  </table>
-                 
+                 <?php } ?>
                   
              </div>
          </div>
        
         
     </div>
-  </body>
-</html>

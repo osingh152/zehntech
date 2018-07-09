@@ -108,12 +108,11 @@ class Welcome extends CI_Controller {
                     
                 
             );
-//                echo'<pre />';
-//                var_dump($order);
-                //die;
             $this->orders->InsertRecords('orders',$order);     
             }
-            $data['orders']=$this->orders->GetRecords('orders');
-            $this->load->view('TakeOrders',$data);
+            $data['title']='Take order';
+            $data['orders']=$this->orders->GetOpenOrderRecords('orders');
+            $data['_view']='TakeOrders';
+            $this->load->view('layout/main',$data);
 	}
 }
