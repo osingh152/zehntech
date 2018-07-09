@@ -19,8 +19,9 @@
                      <tbody>
                          <?php 
                             foreach($orders as $odr) {
-                                if($odr->status=='closed')
+                                if($odr->status=='Closed')
                                 {
+                                    
                                   $cls='style="display:none"';
                                 }
                          ?>

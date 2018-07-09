@@ -5,7 +5,8 @@ class Orders extends CI_Model
 	
     function CreateTable($table,$coloumn)
     {
-        Lazer::create($table, $coloumn);
+       Lazer::create($table, $coloumn);
+        
     }
     
     function InsertRecords($table,$data)

@@ -9,6 +9,7 @@
                     </div>     
 
                     <div  class="panel-body" >
+                        
                         <div class="form-group">
                                     <label>Table Number</label>
                                     <select name="TableNumber" class="form-control">
@@ -73,7 +74,9 @@
         
          <div class="row">
              <div class="col-md-12">
+                 
                  <?php if(count($orders)>=1) { ?>
+                 <h3>My Orders</h3>
                  <table class="table table-bordered"> 
                      <thead>
                      <th>Table</th>

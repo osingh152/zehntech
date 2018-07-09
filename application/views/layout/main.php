@@ -15,9 +15,9 @@
       <a class="navbar-brand" href="<?php echo base_url() ?>">My Restaurant</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="<?php echo base_url() ?>">Home</a></li>
-      <li><a href="#">Customer Section</a></li>
-      <li><a href="#">Manager Section</a></li>
+      
+      <li><a href="<?php echo base_url('index.php/customer/start') ?>">Customer Section</a></li>
+      <li><a href="<?php echo base_url('index.php/manager') ?>">Manager Section</a></li>
       
     </ul>
   </div>

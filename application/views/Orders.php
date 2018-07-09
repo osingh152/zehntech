@@ -34,33 +34,7 @@
          </div>
         
      <div class="row" id="orders">
-             <div class="col-md-12">
-                 <?php if(count($orders)>=1) { ?>
-                 <table class="table table-bordered"> 
-                     <thead>
-                     <th>Table</th>
-                     <th>Cold Drink</th>
-                     <th>Food</th>
-                     <th>Quantity</th>
-                     <th>Status</th>
-                     </thead>
-                     <tbody>
-                         <?php 
-                            foreach($orders as $odr) {
-                         ?>
-                         <tr>
-                             <td><?php echo $odr->tablenumber ?></td>
-                             <td><?php echo $odr->colddrinktype ?></td>
-                             <td><?php echo $odr->foodtype ?></td>
-                             <td><?php echo $odr->quantity ?></td>
-                             <td><?php echo $odr->status ?></td>
-                         </tr>
-                            <?php } ?>
-                     </tbody>
-                 </table>
-                 <?php } ?>
-                  
-             </div>
+             
          </div>
        
         
