@@ -1,6 +1,5 @@
-# zehntech
-Machine test for zehntech
-
+# Flat file DB json based database
+CodeIgniter script for flate file DB.
 Description
 -----------
 - PHP 5.6+ required
