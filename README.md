@@ -9,6 +9,6 @@ Description
 - Base url must be http://localhost/zhentech/
 -Please make sure data folder is writable.
 - This is basic application with jsonDB.
-- Get in touch [here](https://in.linkedin.com/in/omkar-kurmi-b2a82675) 
+- Get in touch [Omkar](https://in.linkedin.com/in/omkar-kurmi-b2a82675) 
 
 
